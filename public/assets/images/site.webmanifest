@@ -1,0 +1,23 @@
+{
+    "name": "Ricochet Construction",
+    "short_name": "Ricochet",
+    "description": "Professional construction company specializing in fire & flood rebuilds, balcony replacement, and property upgrades with 25+ years of experience in Texas.",
+    "icons": [
+        {
+            "src": "/assets/images/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#10b981",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/presentations/",
+    "scope": "/",
+    "orientation": "portrait-primary"
+}

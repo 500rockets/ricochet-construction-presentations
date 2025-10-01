@@ -1,15 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://presentations.ricochetconstruction.com/</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://presentations.ricochetconstruction.com/presentations/</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://slides.ricochetconstruction.com/</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://slides.ricochetconstruction.com/assets/images/social-share-home.jpg</image:loc>
+      <image:title>Ricochet Construction - Building Trust, Building Excellence</image:title>
+      <image:caption>Professional construction company with 25+ years experience in Texas</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://slides.ricochetconstruction.com/presentations/</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://slides.ricochetconstruction.com/assets/images/social-share-presentation.jpg</image:loc>
+      <image:title>Ricochet Construction - Interactive Company Presentation</image:title>
+      <image:caption>Discover our story, services, and what makes us different in the construction industry</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://slides.ricochetconstruction.com/images/ProjectPhotos/apartment_balcony_replacement.JPG</image:loc>
+      <image:title>Apartment Balcony Replacement Project</image:title>
+      <image:caption>Professional balcony replacement services by Ricochet Construction</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://slides.ricochetconstruction.com/images/ProjectPhotos/apartment_rebuild_roofing_2.JPG</image:loc>
+      <image:title>Apartment Rebuild Roofing Project</image:title>
+      <image:caption>Expert roofing services for apartment rebuilds</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://slides.ricochetconstruction.com/images/ProjectPhotos/commercial_remodeled_interior.JPG</image:loc>
+      <image:title>Commercial Remodeled Interior</image:title>
+      <image:caption>Professional commercial interior remodeling services</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://slides.ricochetconstruction.com/services/</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://slides.ricochetconstruction.com/assets/images/social-share-services.jpg</image:loc>
+      <image:title>Professional Construction Services | Ricochet Construction</image:title>
+      <image:caption>Expert construction services including fire & flood restoration, balcony replacement, and property upgrades</image:caption>
+    </image:image>
+  </url>
 </urlset>
