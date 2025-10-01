@@ -658,32 +658,43 @@ body {
     }
     
     .slide {
-        padding: 12px;
-        height: calc(100vh - 60px);
+        padding: 8px 12px;
+        height: auto;
+        min-height: calc(100vh - 70px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .slide-content {
+        width: 100%;
+        max-width: 100%;
+        overflow-y: auto;
+        max-height: calc(100vh - 80px);
     }
     
     .slide-title {
         font-size: 1.8rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
     }
     
     .main-title {
         font-size: 1.8rem;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
     
     .subtitle {
         font-size: 1.2rem;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
     
     .tagline {
         font-size: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
     
     .title-logo {
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
     
     .title-logo .main-logo {
@@ -693,12 +704,12 @@ body {
     }
     
     .founder-intro {
-        padding: 1rem;
-        margin-top: 1rem;
+        padding: 0.8rem;
+        margin-top: 0.8rem;
     }
     
     .founder-intro p {
-        margin: 6px 0;
+        margin: 4px 0;
         font-size: 0.9rem;
     }
     
@@ -710,8 +721,8 @@ body {
     .project-gallery,
     .team-gallery {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-top: 1rem;
+        gap: 0.8rem;
+        margin-top: 0.8rem;
     }
     
     .service-item,
@@ -719,7 +730,7 @@ body {
     .step,
     .stat,
     .contact-item {
-        padding: 1rem;
+        padding: 0.8rem;
     }
     
     .project-photo img, .team-photo img {
@@ -733,12 +744,12 @@ body {
     
     .slide[data-slide="3"] .core-values {
         grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-top: 1rem;
+        gap: 0.8rem;
+        margin-top: 0.8rem;
     }
     
     .slide[data-slide="3"] .value-item {
-        padding: 1rem;
+        padding: 0.8rem;
     }
     
     .slide[data-slide="3"] .mission-statement h3 {
