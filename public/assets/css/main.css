@@ -605,12 +605,28 @@ blockquote cite {
         display: flex;
     }
     
+    .hero {
+        min-height: auto;
+        padding: 60px 0 40px;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
     
     .hero-subtitle {
         font-size: 1.2rem;
+    }
+    
+    /* Ensure proper scrolling on mobile */
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    /* Add bottom padding to prevent content cutoff */
+    main, .main-content {
+        padding-bottom: 2rem;
     }
     
     .hero-logo-img {

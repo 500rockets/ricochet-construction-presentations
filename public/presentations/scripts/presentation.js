@@ -138,6 +138,17 @@ class PresentationController {
             
             if (index + 1 === this.currentSlide) {
                 slide.classList.add('active');
+                // Scroll to top of the active slide
+                setTimeout(() => {
+                    slide.scrollTop = 0;
+                    // Also scroll the main container to top on mobile
+                    const slidesContainer = document.querySelector('.slides-container');
+                    if (slidesContainer) {
+                        slidesContainer.scrollTop = 0;
+                    }
+                    // Scroll window to top as well
+                    window.scrollTo(0, 0);
+                }, 50);
             } else if (index + 1 < this.currentSlide) {
                 slide.classList.add('prev');
             }
