@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # nginx reverse proxy (like production)
+  nginx:
+    image: nginx:alpine
+    container_name: ricochet-nginx-local
+    ports:
+      - "3000:80"
+    volumes:
+      - ./nginx/local.conf:/etc/nginx/nginx.conf:ro
+      - ./public:/var/www/html:ro
+    depends_on:
+      - web
+    restart: unless-stopped
+    networks:
+      - ricochet-local
+
+  # Static file server (like production)
+  web:
+    image: nginx:alpine
+    container_name: ricochet-web-local
+    volumes:
+      - ./nginx/web.conf:/etc/nginx/nginx.conf:ro
+      - ./public:/usr/share/nginx/html:ro
+    expose:
+      - "80"
+    restart: unless-stopped
+    networks:
+      - ricochet-local
+
+networks:
+  ricochet-local:
+    driver: bridge

@@ -17,14 +17,14 @@
     <div class="presentation-container">
         <!-- Navigation -->
         <nav class="presentation-nav">
-            <div class="nav-brand">
-                <a href="/" class="home-link">← Back to Home</a>
-                <img src="assets/Ricochet_Construction_dallas_green_logo_600w.png" alt="Ricochet Construction Logo" class="logo">
-                <h1>Ricochet Construction</h1>
+            <div class="nav-left">
+                <a href="/" class="logo-link">
+                    <img src="assets/Ricochet_Construction_dallas_green_logo_600w.png" alt="Ricochet Construction Logo" class="logo">
+                </a>
             </div>
             <div class="nav-controls">
                 <button id="prevBtn" class="nav-btn">←</button>
-                <span id="slideCounter" class="slide-counter">1 / 8</span>
+                <span id="slideCounter" class="slide-counter">1 / 9</span>
                 <button id="nextBtn" class="nav-btn">→</button>
             </div>
         </nav>
@@ -129,8 +129,59 @@
                 </div>
             </section>
 
-            <!-- Slide 5: Our Process -->
+            <!-- Slide 4.5: Project Portfolio -->
             <section class="slide" data-slide="5">
+                <div class="slide-content">
+                    <h2 class="slide-title">Our Work Portfolio</h2>
+                    <div class="project-gallery">
+                        <div class="project-photo" onclick="openLightbox(0); event.stopPropagation();">
+                            <img src="/images/ProjectPhotos/apartment_balcony_replacement.JPG" alt="Apartment Balcony Replacement">
+                            <div class="photo-caption">Apartment Balcony Replacement</div>
+                            <div class="photo-overlay">
+                                <div class="zoom-icon">🔍</div>
+                            </div>
+                        </div>
+                        <div class="project-photo" onclick="openLightbox(1); event.stopPropagation();">
+                            <img src="/images/ProjectPhotos/apartment_rebuild_roofing_2.JPG" alt="Apartment Rebuild Roofing">
+                            <div class="photo-caption">Apartment Rebuild Roofing</div>
+                            <div class="photo-overlay">
+                                <div class="zoom-icon">🔍</div>
+                            </div>
+                        </div>
+                        <div class="project-photo" onclick="openLightbox(2); event.stopPropagation();">
+                            <img src="/images/ProjectPhotos/commercial_remodeled_interior.JPG" alt="Commercial Remodeled Interior">
+                            <div class="photo-caption">Commercial Remodeled Interior</div>
+                            <div class="photo-overlay">
+                                <div class="zoom-icon">🔍</div>
+                            </div>
+                        </div>
+                        <div class="project-photo" onclick="openLightbox(3); event.stopPropagation();">
+                            <img src="/images/ProjectPhotos/retaining_wall.JPG" alt="Retaining Wall Construction">
+                            <div class="photo-caption">Retaining Wall Construction</div>
+                            <div class="photo-overlay">
+                                <div class="zoom-icon">🔍</div>
+                            </div>
+                        </div>
+                        <div class="project-photo" onclick="openLightbox(4); event.stopPropagation();">
+                            <img src="/images/ProjectPhotos/team_working_drainage_repair.JPG" alt="Team Working Drainage Repair">
+                            <div class="photo-caption">Team Working Drainage Repair</div>
+                            <div class="photo-overlay">
+                                <div class="zoom-icon">🔍</div>
+                            </div>
+                        </div>
+                        <div class="project-photo" onclick="openLightbox(5); event.stopPropagation();">
+                            <img src="/images/ProjectPhotos/apartment_painting.jpg" alt="Apartment Painting Project">
+                            <div class="photo-caption">Apartment Painting Project</div>
+                            <div class="photo-overlay">
+                                <div class="zoom-icon">🔍</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Our Process -->
+            <section class="slide" data-slide="6">
                 <div class="slide-content">
                     <h2 class="slide-title">How We Work</h2>
                     <div class="process-steps">
@@ -158,13 +209,13 @@
                 </div>
             </section>
 
-            <!-- Slide 6: Our Difference -->
-            <section class="slide" data-slide="6">
+            <!-- Slide 7: Our Difference -->
+            <section class="slide" data-slide="7">
                 <div class="slide-content">
                     <h2 class="slide-title">What Makes Us Different</h2>
                     <div class="difference-content">
                         <div class="highlight-box">
-                            <h3>"No one else does that"</h3>
+                            <h3 class="highlight-title">"No one else does that"</h3>
                             <p>48-hour response and proposal timeline</p>
                         </div>
                         <div class="highlight-box">
@@ -193,14 +244,32 @@
                 </div>
             </section>
 
-            <!-- Slide 7: Team & Reliability -->
-            <section class="slide" data-slide="7">
+            <!-- Slide 8: Team & Reliability -->
+            <section class="slide" data-slide="8">
                 <div class="slide-content">
                     <h2 class="slide-title">Our Team</h2>
                     <div class="team-content">
                         <div class="team-highlight">
                             <h3>"Greatness is defined by longevity and long-lasting relationships"</h3>
                             <p>That's what defines a company's character.</p>
+                        </div>
+                        <div class="team-gallery">
+                            <div class="team-photo">
+                                <img src="/images/logos/Team Photos/IMG_3909.JPG" alt="Team at work">
+                                <div class="photo-caption">Our experienced crew in action</div>
+                            </div>
+                            <div class="team-photo">
+                                <img src="/images/logos/Team Photos/IMG_3914.JPG" alt="Team collaboration">
+                                <div class="photo-caption">Collaborative teamwork</div>
+                            </div>
+                            <div class="team-photo">
+                                <img src="/images/logos/Team Photos/IMG_3921.JPG" alt="Quality craftsmanship">
+                                <div class="photo-caption">Quality craftsmanship focus</div>
+                            </div>
+                            <div class="team-photo">
+                                <img src="/images/logos/Team Photos/IMG_3928.JPG" alt="Professional team">
+                                <div class="photo-caption">Professional expertise</div>
+                            </div>
                         </div>
                         <div class="team-facts">
                             <div class="fact">
@@ -220,8 +289,8 @@
                 </div>
             </section>
 
-            <!-- Slide 8: Call to Action -->
-            <section class="slide" data-slide="8">
+            <!-- Slide 9: Call to Action -->
+            <section class="slide" data-slide="9" id="contact">
                 <div class="slide-content cta-slide">
                     <h2 class="slide-title">Ready to Get Started?</h2>
                     <div class="cta-content">
@@ -229,18 +298,18 @@
                         <div class="contact-info">
                             <div class="contact-item">
                                 <h4>Phone</h4>
-                                <p>(XXX) XXX-XXXX</p>
+                                <p>(214) 707-7500</p>
                             </div>
                             <div class="contact-item">
                                 <h4>Email</h4>
-                                <p>info@ricochetconstruction.com</p>
+                                <p><a href="mailto:info@ricochetconstruction.com" class="email-link">info@ricochetconstruction.com</a></p>
                             </div>
                             <div class="contact-item">
                                 <h4>Service Area</h4>
                                 <p>Texas Statewide</p>
                             </div>
                         </div>
-                        <button class="cta-button">Request a Quote Today</button>
+                        <a href="mailto:info@ricochetconstruction.com?subject=Quote Request&body=Hello, I would like to request a quote for my construction project. Please contact me to discuss the details." class="cta-button">Request a Quote Today</a>
                     </div>
                 </div>
             </section>
@@ -249,6 +318,18 @@
         <!-- Progress Indicator -->
         <div class="progress-bar">
             <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <button class="lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</button>
+            <img id="lightbox-image" src="" alt="">
+            <button class="lightbox-next" onclick="changeLightboxImage(1)">&#10095;</button>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <div class="lightbox-counter" id="lightbox-counter"></div>
         </div>
     </div>
 

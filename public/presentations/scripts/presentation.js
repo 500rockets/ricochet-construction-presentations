@@ -2,7 +2,7 @@
 class PresentationController {
     constructor() {
         this.currentSlide = 1;
-        this.totalSlides = 8;
+        this.totalSlides = 9;
         this.slides = document.querySelectorAll('.slide');
         this.prevBtn = document.getElementById('prevBtn');
         this.nextBtn = document.getElementById('nextBtn');
@@ -23,6 +23,7 @@ class PresentationController {
         // Button clicks
         this.prevBtn.addEventListener('click', () => this.previousSlide());
         this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
@@ -86,9 +87,14 @@ class PresentationController {
             startY = 0;
         });
         
-        // Click to advance (except on buttons)
+        // Click to advance (except on buttons and interactive elements)
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-controls') && !e.target.closest('.cta-button')) {
+            if (!e.target.closest('.nav-controls') && 
+                !e.target.closest('.cta-button') && 
+                !e.target.closest('.project-photo') && 
+                !e.target.closest('.team-photo') &&
+                !e.target.closest('.email-link') &&
+                !e.target.closest('#lightbox')) {
                 this.nextSlide();
             }
         });
@@ -210,6 +216,103 @@ class PresentationController {
         });
     }
 }
+
+// Lightbox functionality
+const projectImages = [
+    {
+        src: '/images/ProjectPhotos/apartment_balcony_replacement.JPG',
+        caption: 'Apartment Balcony Replacement'
+    },
+    {
+        src: '/images/ProjectPhotos/apartment_rebuild_roofing_2.JPG',
+        caption: 'Apartment Rebuild Roofing'
+    },
+    {
+        src: '/images/ProjectPhotos/commercial_remodeled_interior.JPG',
+        caption: 'Commercial Remodeled Interior'
+    },
+    {
+        src: '/images/ProjectPhotos/retaining_wall.JPG',
+        caption: 'Retaining Wall Construction'
+    },
+    {
+        src: '/images/ProjectPhotos/team_working_drainage_repair.JPG',
+        caption: 'Team Working Drainage Repair'
+    },
+    {
+        src: '/images/ProjectPhotos/apartment_painting.jpg',
+        caption: 'Apartment Painting Project'
+    }
+];
+
+let currentLightboxIndex = 0;
+
+function openLightbox(index) {
+    currentLightboxIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    
+    lightboxImage.src = projectImages[index].src;
+    lightboxImage.alt = projectImages[index].caption;
+    lightboxCaption.textContent = projectImages[index].caption;
+    lightboxCounter.textContent = `${index + 1} / ${projectImages.length}`;
+    
+    lightbox.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+function changeLightboxImage(direction) {
+    currentLightboxIndex += direction;
+    
+    if (currentLightboxIndex >= projectImages.length) {
+        currentLightboxIndex = 0;
+    } else if (currentLightboxIndex < 0) {
+        currentLightboxIndex = projectImages.length - 1;
+    }
+    
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    
+    lightboxImage.src = projectImages[currentLightboxIndex].src;
+    lightboxImage.alt = projectImages[currentLightboxIndex].caption;
+    lightboxCaption.textContent = projectImages[currentLightboxIndex].caption;
+    lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${projectImages.length}`;
+}
+
+// Close lightbox when clicking outside the image
+document.addEventListener('click', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Keyboard navigation for lightbox
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display === 'block') {
+        switch(e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowLeft':
+                changeLightboxImage(-1);
+                break;
+            case 'ArrowRight':
+                changeLightboxImage(1);
+                break;
+        }
+    }
+});
 
 // Initialize presentation when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
