@@ -87,9 +87,11 @@ class PresentationController {
             startY = 0;
         });
         
-        // Click to advance (except on buttons and interactive elements)
+        // Click to advance (desktop only, except on buttons and interactive elements)
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-controls') && 
+            // Only enable click-to-advance on desktop (screen width > 768px)
+            if (window.innerWidth > 768 && 
+                !e.target.closest('.nav-controls') && 
                 !e.target.closest('.cta-button') && 
                 !e.target.closest('.project-photo') && 
                 !e.target.closest('.team-photo') &&

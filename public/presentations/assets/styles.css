@@ -169,7 +169,7 @@ body {
     font-size: 1.1rem;
     color: var(--dark-gray);
     margin-bottom: 32px;
-    max-width: 600px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
@@ -387,6 +387,10 @@ body {
     font-size: 1.2rem;
 }
 
+.slide[data-slide="7"] .highlight-box-spaced {
+    margin-top: 4rem;
+}
+
 .slide[data-slide="7"] .stat h4 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
@@ -503,6 +507,12 @@ body {
 
 /* Fix team photo cropping - zoom out for better framing */
 .team-photo:nth-child(2) img {
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Fix Dustin Doan founder photo - contain within box */
+.team-photo:nth-child(4) img {
     object-fit: contain;
     background: rgba(255, 255, 255, 0.1);
 }
@@ -635,13 +645,18 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .slides-container {
+        overflow-y: auto;
+        height: auto;
+    }
+    
     .presentation-nav {
         padding: 8px 12px;
         min-height: 50px;
     }
     
     .nav-left .logo {
-        height: 18px;
+        height: 32px;
     }
     
     .nav-controls {
@@ -658,19 +673,23 @@ body {
     }
     
     .slide {
-        padding: 8px 12px;
+        padding: 16px 12px;
         height: auto;
-        min-height: calc(100vh - 70px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        min-height: auto;
+        display: none;
+    }
+    
+    .slide.active {
+        display: block;
     }
     
     .slide-content {
         width: 100%;
         max-width: 100%;
-        overflow-y: auto;
-        max-height: calc(100vh - 80px);
+        overflow-y: visible;
+        max-height: none;
+        display: block;
+        min-height: auto;
     }
     
     .slide-title {
@@ -698,9 +717,9 @@ body {
     }
     
     .title-logo .main-logo {
-        width: 140px;
+        width: 180px;
         height: auto;
-        max-width: 140px;
+        max-width: 180px;
     }
     
     .founder-intro {
