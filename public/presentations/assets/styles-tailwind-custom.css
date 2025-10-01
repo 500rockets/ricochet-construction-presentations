@@ -1,0 +1,523 @@
+/* Custom Tailwind-based styles for existing HTML structure */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #374151;
+}
+
+/* CSS Variables */
+:root {
+    --primary-green: #10b981;
+    --light-green: #34d399;
+    --dark-green: #059669;
+    --dark-gray: #374151;
+    --light-gray: #f3f4f6;
+    --white: #ffffff;
+}
+
+/* Main Container */
+.presentation-container {
+    @apply h-screen flex flex-col;
+}
+
+/* Navigation */
+.presentation-nav {
+    @apply flex justify-between items-center px-8 py-3 bg-white shadow-lg border-b border-gray-200 relative z-50;
+}
+
+.nav-left {
+    @apply flex items-center gap-6;
+}
+
+.nav-left .logo {
+    @apply h-7 w-auto;
+}
+
+.nav-controls {
+    @apply flex items-center gap-4;
+}
+
+.nav-btn {
+    @apply bg-primary-green text-white border-none px-3 py-2 rounded-md cursor-pointer text-base transition-colors duration-300;
+}
+
+.nav-btn:hover:not(:disabled) {
+    @apply bg-dark-green;
+}
+
+.nav-btn:disabled {
+    @apply bg-gray-400 cursor-not-allowed;
+}
+
+.slide-counter {
+    @apply text-dark-gray font-medium text-sm;
+}
+
+/* Slides Container */
+.slides-container {
+    @apply flex-1 relative overflow-hidden;
+}
+
+/* Individual Slides */
+.slide {
+    @apply hidden p-8 h-full overflow-y-auto;
+}
+
+.slide.active {
+    @apply block;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.slide-content {
+    @apply max-w-6xl mx-auto text-center;
+}
+
+.slide-title {
+    @apply text-4xl font-bold text-primary-green mb-8;
+}
+
+/* Title Slide */
+.title-slide {
+    @apply flex flex-col items-center justify-center h-full;
+}
+
+.title-logo {
+    @apply mb-8;
+}
+
+.title-logo .main-logo {
+    @apply w-48 h-auto max-w-48 mx-auto;
+}
+
+.main-title {
+    @apply text-5xl font-extrabold text-primary-green mb-4;
+}
+
+.subtitle {
+    @apply text-2xl font-semibold text-dark-green mb-4;
+}
+
+.tagline {
+    @apply text-lg text-dark-gray mb-8 max-w-3xl mx-auto leading-relaxed;
+}
+
+.founder-intro {
+    @apply bg-primary-green bg-opacity-10 p-6 rounded-xl border border-primary-green border-opacity-20 max-w-md mx-auto;
+}
+
+.founder-intro p {
+    @apply text-dark-gray mb-2;
+}
+
+.founder-intro p:last-child {
+    @apply mb-0;
+}
+
+/* Content Grids */
+.content-grid,
+.services-grid,
+.process-steps,
+.stats-grid {
+    @apply grid gap-6 mt-8;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.timeline-item,
+.service-item,
+.step,
+.stat {
+    @apply bg-gray-50 p-6 rounded-xl border-l-4 border-primary-green;
+}
+
+.timeline-item h3,
+.service-item h3 {
+    @apply text-light-green font-semibold mb-2;
+}
+
+.timeline-item h3 *,
+.timeline-item h3 {
+    @apply text-light-green !important;
+}
+
+.timeline-item p,
+.service-item p {
+    @apply text-dark-gray leading-relaxed;
+}
+
+/* Mission Section */
+.mission-content {
+    @apply max-w-4xl mx-auto;
+}
+
+.mission-statement {
+    @apply text-center mb-8;
+}
+
+.mission-statement h3 {
+    @apply text-3xl font-bold text-dark-gray mb-4 leading-tight;
+}
+
+.quote-author {
+    @apply text-lg text-primary-green font-medium;
+}
+
+.core-values {
+    @apply grid gap-6 mt-8;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.value-item {
+    @apply bg-primary-green bg-opacity-10 p-8 rounded-xl border border-primary-green border-opacity-20;
+}
+
+.value-item h4 {
+    @apply text-xl font-bold text-primary-green mb-3;
+}
+
+.value-item p {
+    @apply text-dark-gray leading-relaxed;
+}
+
+/* Photo Galleries */
+.project-gallery,
+.team-gallery {
+    @apply grid gap-6 mt-8;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-photo,
+.team-photo {
+    @apply relative overflow-hidden rounded-xl cursor-pointer transition-transform duration-300;
+}
+
+.project-photo:hover,
+.team-photo:hover {
+    @apply scale-105;
+}
+
+.project-photo img,
+.team-photo img {
+    @apply w-full h-48 object-cover block transition-opacity duration-300;
+}
+
+/* Fix specific team photos */
+.team-photo:nth-child(2) img,
+.team-photo:nth-child(4) img {
+    @apply object-contain;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.photo-caption {
+    @apply p-4 text-center text-white bg-dark-gray bg-opacity-90 absolute bottom-0 left-0 right-0;
+}
+
+.photo-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center transition-all duration-300;
+}
+
+.project-photo:hover .photo-overlay,
+.team-photo:hover .photo-overlay {
+    @apply bg-opacity-30;
+}
+
+.zoom-icon {
+    @apply text-white text-2xl opacity-0 transition-opacity duration-300;
+}
+
+.project-photo:hover .zoom-icon,
+.team-photo:hover .zoom-icon {
+    @apply opacity-100;
+}
+
+/* Stats and Highlights */
+.highlight-box {
+    @apply bg-primary-green bg-opacity-10 p-8 rounded-xl border border-primary-green border-opacity-20 text-center;
+}
+
+.highlight-box h3 {
+    @apply text-2xl font-bold text-primary-green mb-3;
+}
+
+.highlight-box p {
+    @apply text-lg text-dark-gray;
+}
+
+.highlight-box-spaced {
+    @apply mt-16;
+}
+
+.stat h4 {
+    @apply text-4xl font-bold text-primary-green mb-2;
+}
+
+.stat p {
+    @apply text-dark-gray font-medium;
+}
+
+/* Contact/CTA */
+.cta-slide {
+    @apply flex flex-col items-center justify-center h-full;
+}
+
+.contact-info {
+    @apply grid gap-6 my-8;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.contact-item {
+    @apply text-center;
+}
+
+.contact-item h4 {
+    @apply text-xl font-bold text-primary-green mb-2;
+}
+
+.contact-item p {
+    @apply text-dark-gray;
+}
+
+.email-link {
+    @apply text-primary-green no-underline font-medium transition-colors duration-300;
+}
+
+.email-link:hover {
+    @apply text-light-green underline;
+}
+
+.cta-button {
+    @apply bg-primary-green text-white px-8 py-4 rounded-lg text-lg font-semibold no-underline inline-block transition-colors duration-300;
+}
+
+.cta-button:hover {
+    @apply bg-dark-green;
+}
+
+/* Lightbox */
+.lightbox {
+    @apply fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden;
+}
+
+.lightbox-content {
+    @apply relative max-w-4xl max-h-full p-5;
+}
+
+.lightbox-close {
+    @apply absolute top-5 right-8 text-white text-4xl cursor-pointer z-10 transition-colors duration-300;
+}
+
+.lightbox-close:hover {
+    @apply text-gray-300;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    @apply absolute top-1/2 transform -translate-y-1/2 text-white text-3xl cursor-pointer px-4 py-6 transition-colors duration-300;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    @apply text-gray-300;
+}
+
+.lightbox-prev {
+    @apply left-5;
+}
+
+.lightbox-next {
+    @apply right-5;
+}
+
+#lightbox-image {
+    @apply max-w-full max-h-screen object-contain;
+}
+
+.lightbox-caption {
+    @apply text-white text-center text-xl mt-5;
+}
+
+.lightbox-counter {
+    @apply text-white text-center text-sm mt-2 opacity-75;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .presentation-container {
+        @apply h-screen overflow-hidden;
+    }
+    
+    .slides-container {
+        @apply overflow-y-auto;
+        height: calc(100vh - 50px);
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .presentation-nav {
+        @apply px-3 py-1.5 sticky top-0 z-50;
+        min-height: 44px;
+    }
+    
+    .nav-left .logo {
+        @apply h-10;
+    }
+    
+    .nav-controls {
+        @apply gap-2;
+    }
+    
+    .nav-btn {
+        @apply px-2.5 py-1.5 text-sm;
+    }
+    
+    .slide-counter {
+        @apply text-xs;
+    }
+    
+    .slide {
+        @apply px-3 py-5;
+        min-height: calc(100vh - 50px);
+    }
+    
+    .slide-content {
+        @apply pt-2.5;
+    }
+    
+    .slide-title {
+        @apply text-3xl mb-4;
+    }
+    
+    .main-title {
+        @apply text-3xl mb-2;
+    }
+    
+    .subtitle {
+        @apply text-xl mb-2;
+    }
+    
+    .tagline {
+        @apply text-base mb-4;
+    }
+    
+    .title-logo {
+        @apply mb-3;
+    }
+    
+    .title-logo .main-logo {
+        @apply w-44 max-w-44;
+    }
+    
+    .founder-intro {
+        @apply p-4 mt-4;
+    }
+    
+    .founder-intro p {
+        @apply text-sm my-1;
+    }
+    
+    .content-grid,
+    .services-grid,
+    .process-steps,
+    .stats-grid,
+    .contact-info,
+    .project-gallery,
+    .team-gallery,
+    .core-values {
+        @apply grid-cols-1 gap-4 mt-4;
+    }
+    
+    .timeline-item,
+    .service-item,
+    .step,
+    .stat,
+    .contact-item,
+    .value-item {
+        @apply p-4;
+    }
+    
+    .project-photo img,
+    .team-photo img {
+        @apply h-40;
+    }
+    
+    .photo-caption {
+        @apply p-3 text-sm;
+    }
+    
+    .core-values {
+        @apply mb-8;
+    }
+    
+    .value-item {
+        @apply mb-2;
+    }
+    
+    .mission-statement h3 {
+        @apply text-2xl leading-tight;
+    }
+    
+    .highlight-box h3 {
+        @apply text-xl;
+    }
+    
+    .stat h4 {
+        @apply text-3xl;
+    }
+    
+    .highlight-box-spaced {
+        @apply mt-16;
+    }
+    
+    .lightbox-content {
+        @apply p-2.5;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+        @apply px-4 py-3 text-xl;
+    }
+    
+    .lightbox-prev {
+        @apply left-2.5;
+    }
+    
+    .lightbox-next {
+        @apply right-2.5;
+    }
+    
+    .lightbox-close {
+        @apply top-2.5 right-5 text-3xl;
+    }
+    
+    #lightbox-image {
+        max-width: 95%;
+        max-height: 60vh;
+    }
+    
+    .lightbox-caption {
+        @apply text-base mt-4;
+    }
+}

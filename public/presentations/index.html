@@ -88,9 +88,27 @@
     }
     </script>
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/styles.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/styles-tailwind-custom.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#10b981',
+                        'light-green': '#34d399', 
+                        'dark-green': '#059669',
+                        'dark-gray': '#374151',
+                        'light-gray': '#f3f4f6'
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- Preload critical resources -->
     <link rel="preload" href="assets/Ricochet_Construction_dallas_green_logo_600w.png" as="image">
