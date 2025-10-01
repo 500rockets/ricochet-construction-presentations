@@ -259,8 +259,12 @@ body {
 }
 
 .timeline-item h3 {
-    color: var(--light-green);
+    color: var(--light-green) !important;
     margin-bottom: 0.5rem;
+}
+
+.timeline-item h3 * {
+    color: var(--light-green) !important;
 }
 
 /* Process Steps */
@@ -645,18 +649,27 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .presentation-container {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
     .slides-container {
         overflow-y: auto;
-        height: auto;
+        height: calc(100vh - 50px);
+        -webkit-overflow-scrolling: touch;
     }
     
     .presentation-nav {
-        padding: 8px 12px;
-        min-height: 50px;
+        padding: 6px 12px;
+        min-height: 44px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
     
     .nav-left .logo {
-        height: 32px;
+        height: 40px;
     }
     
     .nav-controls {
@@ -673,9 +686,9 @@ body {
     }
     
     .slide {
-        padding: 16px 12px;
+        padding: 20px 12px;
         height: auto;
-        min-height: auto;
+        min-height: calc(100vh - 50px);
         display: none;
     }
     
@@ -690,6 +703,7 @@ body {
         max-height: none;
         display: block;
         min-height: auto;
+        padding-top: 10px;
     }
     
     .slide-title {
@@ -765,10 +779,12 @@ body {
         grid-template-columns: 1fr;
         gap: 0.8rem;
         margin-top: 0.8rem;
+        margin-bottom: 2rem;
     }
     
     .slide[data-slide="3"] .value-item {
         padding: 0.8rem;
+        margin-bottom: 0.5rem;
     }
     
     .slide[data-slide="3"] .mission-statement h3 {
