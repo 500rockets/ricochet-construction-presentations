@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  presentations-site:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
+      - ./nginx/presentations.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/ssl/certs:ro
+    restart: unless-stopped
+    environment:
+      - NGINX_HOST=presentations.ricochetconstruction.com
+    networks:
+      - presentations-network
+
+networks:
+  presentations-network:
+    driver: bridge

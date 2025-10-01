@@ -6,7 +6,14 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "docker:dev": "docker compose -f docker-compose.dev.yml up --build",
+    "docker:staging": "docker compose -f docker-compose.staging.yml up --build",
+    "docker:prod": "docker compose -f docker-compose.prod.yml up --build",
+    "docker:dev:down": "docker compose -f docker-compose.dev.yml down",
+    "docker:staging:down": "docker compose -f docker-compose.staging.yml down",
+    "docker:prod:down": "docker compose -f docker-compose.prod.yml down"
   },
   "dependencies": {
     "react": "19.1.0",

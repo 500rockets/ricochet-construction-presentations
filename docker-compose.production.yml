@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  # Nginx reverse proxy with SSL termination
+  nginx:
+    image: nginx:alpine
+    container_name: ricochet-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./public:/var/www/html:ro
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - dhparam:/etc/ssl/certs
+    depends_on:
+      - web
+    restart: unless-stopped
+    networks:
+      - ricochet-network
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+  # Static file server (internal)
+  web:
+    image: nginx:alpine
+    container_name: ricochet-web
+    volumes:
+      - ./nginx/web.conf:/etc/nginx/nginx.conf:ro
+      - ./public:/usr/share/nginx/html:ro
+    expose:
+      - "80"
+    restart: unless-stopped
+    networks:
+      - ricochet-network
+
+  # Certbot for SSL certificates
+  certbot:
+    image: certbot/certbot
+    container_name: ricochet-certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - ./public:/var/www/html
+    depends_on:
+      - nginx
+    command: certonly --webroot --webroot-path=/var/www/html --email admin@ricochetconstruction.com --agree-tos --no-eff-email --staging -d presentations.ricochetconstruction.com
+    networks:
+      - ricochet-network
+
+  # Watchtower for automatic updates
+  watchtower:
+    image: containrrr/watchtower
+    container_name: ricochet-watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30 --cleanup
+    restart: unless-stopped
+
+volumes:
+  certbot-etc:
+  certbot-var:
+  dhparam:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./dhparam/
+      o: bind
+
+networks:
+  ricochet-network:
+    driver: bridge
