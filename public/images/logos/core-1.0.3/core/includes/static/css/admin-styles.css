@@ -1,0 +1,91 @@
+/* Configure border and height of the opened control section. */
+#customize-theme-controls .control-section.open {
+	border: 0;
+	height: 100%;
+}
+
+
+
+/* Customize the appearance of link of the "Background Image" option type. */
+.fw-option.fw-option-type-background-image .fw-option.fw-option-type-upload.images-only .thumb,
+#fw-option-type-iconv2-custom-upload.fw-option.fw-option-type-upload.images-only .thumb {
+	float: left;
+	margin-right: 10px;
+}
+
+.fw-option.fw-option-type-background-image .fw-option.fw-option-type-upload.images-only .thumb + p,
+#fw-option-type-iconv2-custom-upload.fw-option.fw-option-type-upload.images-only .thumb + p {
+	display: table;
+	margin-top: 0px;
+}
+
+.fw-option.fw-option-type-background-image .fw-option.fw-option-type-upload.images-only p a,
+#fw-option-type-iconv2-custom-upload.fw-option.fw-option-type-upload.images-only p a {
+	color: #555;
+	border-color: #ccc;
+	background: #f7f7f7;
+	-webkit-box-shadow: 0 1px 0 #ccc;
+	box-shadow: 0 1px 0 #ccc;
+	vertical-align: top;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 26px;
+	height: 28px;
+	margin: 0;
+	padding: 0 10px 1px;
+	cursor: pointer;
+	border-width: 1px;
+	border-style: solid;
+	-webkit-appearance: none;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	white-space: nowrap;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.fw-option.fw-option-type-background-image .fw-option.fw-option-type-upload.images-only p a:hover,
+.fw-option.fw-option-type-background-image .fw-option.fw-option-type-upload.images-only p a:focus,
+#fw-option-type-iconv2-custom-upload.fw-option.fw-option-type-upload.images-only p a:hover,
+#fw-option-type-iconv2-custom-upload.fw-option.fw-option-type-upload.images-only p a:focus {
+	background: #fafafa;
+	border-color: #999;
+	color: #23282d;
+}
+
+.fw-option.fw-option-type-background-image .fw-option.fw-option-type-upload.images-only p a:focus,
+#fw-option-type-iconv2-custom-upload.fw-option.fw-option-type-upload.images-only p a:focus {
+	border-color: #5b9dd9;
+	-webkit-box-shadow: 0 0 3px rgba(0,115,170,.8);
+	box-shadow: 0 0 3px rgba(0,115,170,.8);
+}
+
+.fw-option.fw-option-type-background-image .fw-option.fw-option-type-upload.images-only p a:active,
+#fw-option-type-iconv2-custom-upload.fw-option.fw-option-type-upload.images-only p a:active {
+	background: #eee;
+	border-color: #999;
+	-webkit-box-shadow: inset 0 2px 5px -3px rgba(0,0,0,.5);
+	box-shadow: inset 0 2px 5px -3px rgba(0,0,0,.5);
+	-webkit-transform: translateY(1px);
+	-ms-transform: translateY(1px);
+	transform: translateY(1px);
+}
+
+
+
+/* Customize the width of a large modal window. */
+.fw-modal.fw-modal-large > .media-modal {
+	max-width: 840px;
+}
+
+
+
+/* Hiding typography options components. */
+.fw-option.fw-option-type-typography-v2.core-hide-subset .fw-option-typography-v2-option-subset,
+.fw-option.fw-option-type-typography-v2.core-hide-variation .fw-option-typography-v2-option-variation,
+.fw-option.fw-option-type-typography-v2.core-hide-style .fw-option-typography-v2-option-style,
+.fw-option.fw-option-type-typography-v2.core-hide-weight .fw-option-typography-v2-option-weight {
+	display: none !important;
+}

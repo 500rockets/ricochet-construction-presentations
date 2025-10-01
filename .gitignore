@@ -102,7 +102,7 @@ jspm_packages/
 
 # Gatsby files
 .cache/
-public/
+# public/ - We want to include our public directory
 
 # Storybook build outputs
 .out

@@ -1,0 +1,35 @@
+.wpcf7 .wpcf7-not-valid {
+	border-color: #a94442;
+}
+
+.wpcf7 .wpcf7-not-valid-tip {
+	margin-top: 10px;
+	color: #a94442;
+}
+
+.wpcf7 .wpcf7-validation-errors,
+.wpcf7 .wpcf7-mail-sent-ok,
+.wpcf7 .wpcf7-mail-sent-ng {
+	padding: 15px 20px;
+	margin: 20px 0;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.wpcf7 .wpcf7-validation-errors {
+	background-color: #fcf8e3;
+	border-color: #faf2cc;
+	color: #8a6d3b;
+}
+
+.wpcf7 .wpcf7-mail-sent-ok {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color: #3c763d;
+}
+
+.wpcf7 .wpcf7-mail-sent-ng {
+	background-color: #f2dede;
+	border-color: #ebcccc;
+	color: #a94442;
+}

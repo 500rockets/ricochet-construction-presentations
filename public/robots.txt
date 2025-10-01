@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://presentations.ricochetconstruction.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Allow access to CSS and JS files for proper rendering
+Allow: /assets/
+Allow: /presentations/assets/

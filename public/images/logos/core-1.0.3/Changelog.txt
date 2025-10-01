@@ -1,0 +1,55 @@
+Version 1.0.3
+
+- Some minor fixes
+- Affected files:
+  assets/css/template.css
+  assets/css/template.min.css
+  assets/js/custom.js
+  assets/js/custom.min.js
+  partials/blog/classic-no-sidebar.php
+  partials/blog/classic-sidebar-left.php
+  partials/blog/grid-sidebar-left.php
+  partials/blog/masonry-sidebar-left.php
+  partials/page/builder.php
+  partials/page/classic-no-sidebar.php
+  partials/page/classic-sidebar-left.php
+  partials/portfolio/no-projects.php
+  partials/post/classic-no-sidebar.php
+  partials/post/classic-sidebar-left.php
+  partials/search/classic-no-sidebar.php
+  partials/search/classic-sidebar-left.php
+
+Version 1.0.2
+
+- Merged and minified the CSS files of the plugins and icons
+- Rollback to Jarallax 1.7.3
+- Bootstrap 4.0.0-alpha.6 to Bootstrap 4.0.0-beta
+- Some minor fixes
+- Affected files:
+  assets/bootstrap/css/*.css
+  assets/bootstrap/js/*.js
+  assets/css/template.css
+  assets/css/template.min.css
+  assets/js/custom.js
+  assets/js/custom.min.js
+  assets/js/jarallax.js
+  assets/js/particles.js
+  assets/js/plugins.js
+  assets/js/plugins.min.js
+  framework-customizations/extensions/shortcodes/shortcodes/core-accordion/static/css/styles.css
+  framework-customizations/extensions/shortcodes/shortcodes/core-accordion/views/view.php
+  404.php
+  functions.php
+
+Version 1.0.1
+
+- Fixed color changing of progress bars
+- Changed subtitle indents in simple page header
+- Fixed color of hover to links in the footer
+- Some minor fixes
+- Affected files:
+  framework-customizations/extensions/shortcodes/shortcodes/core-progress-block/views/view.php
+  includes/includes/class-core-page-header.php
+  includes/helpers.php
+  includes/hooks.php
+  functions.php
