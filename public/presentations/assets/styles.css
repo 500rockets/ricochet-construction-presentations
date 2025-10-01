@@ -636,29 +636,70 @@ body {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .presentation-nav {
-        padding: 12px 16px;
+        padding: 8px 12px;
+        min-height: 50px;
     }
     
     .nav-left .logo {
-        height: 24px;
+        height: 18px;
+    }
+    
+    .nav-controls {
+        gap: 8px;
+    }
+    
+    .nav-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+    
+    .slide-counter {
+        font-size: 12px;
     }
     
     .slide {
-        padding: 16px;
+        padding: 12px;
+        height: calc(100vh - 60px);
+    }
+    
+    .slide-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
     
     .main-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 12px;
     }
     
     .subtitle {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .title-logo {
+        margin-bottom: 16px;
     }
     
     .title-logo .main-logo {
-        width: 160px;
+        width: 140px;
         height: auto;
-        max-width: 160px;
+        max-width: 140px;
+    }
+    
+    .founder-intro {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .founder-intro p {
+        margin: 6px 0;
+        font-size: 0.9rem;
     }
     
     .content-grid,
@@ -670,19 +711,83 @@ body {
     .team-gallery {
         grid-template-columns: 1fr;
         gap: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .service-item,
+    .timeline-item,
+    .step,
+    .stat,
+    .contact-item {
+        padding: 1rem;
     }
     
     .project-photo img, .team-photo img {
-        height: 180px;
+        height: 160px;
+    }
+    
+    .photo-caption {
+        padding: 0.75rem;
+        font-size: 0.9rem;
     }
     
     .slide[data-slide="3"] .core-values {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
+        gap: 1rem;
+        margin-top: 1rem;
     }
     
     .slide[data-slide="3"] .value-item {
-        padding: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .slide[data-slide="3"] .mission-statement h3 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+    
+    .slide[data-slide="7"] .highlight-box h3 {
+        font-size: 1.4rem;
+    }
+    
+    .slide[data-slide="7"] .stat h4 {
+        font-size: 2rem;
+    }
+    
+    .slide[data-slide="8"] .team-highlight h3 {
+        font-size: 1.6rem;
+    }
+    
+    .lightbox-content {
+        padding: 10px;
+    }
+    
+    .lightbox-prev, .lightbox-next {
+        padding: 12px 16px;
+        font-size: 20px;
+    }
+    
+    .lightbox-prev {
+        left: 10px;
+    }
+    
+    .lightbox-next {
+        right: 10px;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+    
+    #lightbox-image {
+        max-width: 95%;
+        max-height: 60vh;
+    }
+    
+    .lightbox-caption {
+        font-size: 1rem;
+        margin-top: 15px;
     }
 }
