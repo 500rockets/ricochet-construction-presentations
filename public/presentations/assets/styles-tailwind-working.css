@@ -837,8 +837,11 @@ body {
         margin-top: 15px;
     }
     
-    /* Fix photo gallery slides - add bottom padding to prevent cutoff */
+    /* Fix slides - add bottom padding to prevent cutoff */
+    .slide[data-slide="4"] .slide-content,
     .slide[data-slide="5"] .slide-content,
+    .slide[data-slide="6"] .slide-content,
+    .slide[data-slide="7"] .slide-content,
     .slide[data-slide="8"] .slide-content {
         padding-bottom: 4rem;
     }
